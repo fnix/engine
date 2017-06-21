@@ -3,6 +3,14 @@ html xmlns='http://www.w3.org/1999/xhtml' lang=I18n.locale
   head
     meta charset="utf-8"
     meta http-equiv="x-ua-compatible" content="ie=edge"
+    /! Google Tag Manager
+    javascript:
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer',"#{ENV['GTAG_MANAGER']}");
+    /! End Google Tag Manager
 
     title= escape_once(strip_tags(error_title) + " | #{application_name}")
 
@@ -15,6 +23,10 @@ html xmlns='http://www.w3.org/1999/xhtml' lang=I18n.locale
     = stylesheet_link_tag 'locomotive/account', media: 'screen'
 
   body class=[controller.controller_name, controller.action_name, flash.empty? ? '' : 'with-flash'].join(' ')
+    /! Google Tag Manager (noscript)
+    noscript
+      iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-K2NDM22" style="display:none;visibility:hidden" width="0" 
+    /! End Google Tag Manager (noscript)
     .public-background
       .public-container
         .public-wrapper
